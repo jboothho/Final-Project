@@ -15,20 +15,21 @@ public:
     
     // Setters
     
-    /* ReadDataFromFile function that will take in data from the .csv file */
+    /* ReadDataFromFile function that will take in data from the .csv file and
+     enter it into a vector file */
     void ReadDataFromFile(vector<DataAnalysis> &data, string filename){
         // declare variables
         string header;
         ifstream inFile;
     
-        // if filename == "PLACES" then:
+        // if filename == "Heat Islands" then:
             // Open the places CSV
             inFile.open()
             
         if (inFile){
             inFile >> header;
         }
-        //else-- file open er
+        //else-- if filename == "Social vulnerabilty index" file open er
         
         
         // else if filename == other filename
@@ -36,6 +37,7 @@ public:
             // declare other variables here
     
     }
+    
     
     /* PerformAnalysis1 function that will perform the first analysis on the data*/
         /* I'm thinking that one of them could perform a basic analysis and get the mean of each area*/

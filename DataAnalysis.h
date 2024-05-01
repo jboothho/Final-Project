@@ -4,55 +4,47 @@
 #include <iomanip>
 #include <string>
 
-/* DataAnalysis class that will take in a file, sort it, and perform three different
- statistical analyses */
+/* DataAnalysis super class that will have the capacity to perform three different statistical analyses on its subclasses datasets*/
 
 class DataAnalysis {
 public:
-    // Constructors
+    //TODO: fill out comments for each function
+    /* Requires:
+     Modifies:
+     Effects: */
     DataAnalysis();
-    // Getters
     
-    // Setters
+    /* Requires:
+     Modifies:
+     Effects: */
+    virtual ~DataAnalysis() = default;
     
-    /* ReadDataFromFile function that will take in data from the .csv file and
-     enter it into a vector file */
-    void ReadDataFromFile(vector<DataAnalysis> &data, string filename){
-        // declare variables
-        string header;
-        ifstream inFile;
+    /* Requires:
+     Modifies:
+     Effects: */
+    virtual void ReadDataFromFile(vector<DataAnalysis> &data, string filename);
     
-        // if filename == "Heat Islands" then:
-            // Open the places CSV
-            inFile.open()
-            
-        if (inFile){
-            inFile >> header;
-        }
-        //else-- if filename == "Social vulnerabilty index" file open er
+    // Getter
+    getTitle();
         
-        
-        // else if filename == other filename
-            // then load it in this way
-            // declare other variables here
     
-    }
-    
-    
-    /* PerformAnalysis1 function that will perform the first analysis on the data*/
+    /* PerformAnalysis1 function that will perform the first analysis on the data
+     and load all of the outcomes into a vector*/
         /* I'm thinking that one of them could perform a basic analysis and get the mean of each area*/
+    void PerformAnalysis1(vector<DataAnalysis> & data);
     
     /* PerformAnalysis2 function that will perform the second analysis on the data*/
         /* This one could do a linear regression*/
-    
+    void PerformAnalysis2(vector<DataAnalysis> & data);
+
     /* PerformAnalysis3 function that will perform the third analysis on the data*/
         /* And this one could do a correlation assessment between two variables*/
-    
+    void PerformAnalysis3(vector<DataAnalysis> & data);
+
     /* SendData function that will send the data to Python to add to maps*/
-    
-    
+    void SendData();
     
 private:
-    // vector holding dataset
+    std::string title;
 }
 

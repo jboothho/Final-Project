@@ -22,12 +22,11 @@ public:
     /* Requires:
      Modifies:
      Effects: */
-    virtual void ReadDataFromFile(vector<DataAnalysis> &data, string filename);
+    virtual void ReadDataFromFile(vector<DataAnalysis> &data);
     
     // Getter
     getTitle();
         
-    
     /* PerformAnalysis1 function that will perform the first analysis on the data
      and load all of the outcomes into a vector*/
         /* I'm thinking that one of them could perform a basic analysis and get the mean of each area*/

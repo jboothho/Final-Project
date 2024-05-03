@@ -17,27 +17,27 @@ public:
     
     // Getters
     
-    int getID();
+    int getID()const;
     
-    int getPop();
+    int getPop()const;
     
-    int getHouse();
+    int getHouse()const;
     
-    int getTotDis();
+    int getTotDis()const;
     
-    int getTotChild();
+    int getTotChild()const;
     
-    int getOlderAdult();
+    int getOlderAdult()const;
     
-    int getLow_to_no();
+    int getLow_to_no()const;
     
-    int getLEP();
+    int getLEP()const;
     
-    int getPOC();
+    int getPOC()const;
     
-    double getMed_ill();
+    double getMed_ill()const;
     
-    void readDataFromFile(vector<SVI>) override;
+    void readDataFromFile(vector<SVI>& data) override;
     
 private:
     int ID;

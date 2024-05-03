@@ -28,7 +28,7 @@ public:
         void setAlbedo(double newAlbedo) { albedo = newAlbedo; }
         void setISA(double newISA) { isa = newISA; }
     
-    void getDataFromFile(vector <UrbanHeat> &data){
+    void readDataFromFile(vector <UrbanHeat> &data){
         ifstream inFile;
         inFile.open("/Users/jboothhowe/Documents/CS2300/Final-Project/UrbanLCH.csv");
         string header;

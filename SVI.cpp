@@ -1,46 +1,51 @@
 #include "DataAnalysis.h"
+#include "SVI.h"
 
-class SVI : public DataAnalysis {
-public:
-    /**
+/**
+* Requires:
+* Modifies:
+* Effects:
+ */
+ SVI::SVI() : ID(0), pop(0), house(0), totDis(0), totChild(0), olderAdult(0), low_to_no(0), lep(0), poc(0), med_ill(0) {}
+
+     /**
      * Requires:
      * Modifies:
-     * Effects:
-     */
-    SVI:: SVI() : ID(0), pop(0), house(0), totDis(0), totChild(0), olderAdult(0), low_to_no(0), lep(0), poc(0), med_ill(0) {}
-
-    /**
-     * Requires:
-     * Modifies:
-     * Effects:
-     */
-    SVI:: SVI(int ID, int pop, int house, int totDis, int totChild, int olderAdult, int low_to_no, int lep, int poc, double med_ill): ID(ID), pop(pop), house(house), totDis(totDis), totChild(totChild), olderAdult(olderAdult), low_to_no(low_to_no), lep(lep), poc(poc), med_ill(med_ill){}
+    * Effects:
+    */
+    SVI::SVI(int ID, int pop, int house, int totDis, int totChild, int olderAdult, int low_to_no, int lep, int poc, double med_ill): ID(ID), pop(pop), house(house), totDis(totDis), totChild(totChild), olderAdult(olderAdult), low_to_no(low_to_no), lep(lep), poc(poc), med_ill(med_ill){}
         
     // Getters
-    int getID()const {return ID;}
+    int SVI::getID()const {return ID;}
 
-    int getPop()const {return pop;}
+    int SVI::getPop()const {return pop;}
 
-    int getHouse()const {return house;}
+    int SVI::getHouse()const {return house;}
 
-    int getTotDis()const {return totDis;}
+    int SVI::getTotDis()const {return totDis;}
 
-    int getTotChild()const {return totChild;}
+    int SVI::getTotChild()const {return totChild;}
 
-    int getOlderAdult()const {return olderAdult;}
+    int SVI::getOlderAdult()const {return olderAdult;}
 
-    int getLow_to_no()const {return low_to_no;}
+    int SVI::getLow_to_no()const {return low_to_no;}
 
-    int getLEP()const {return lep;}
+    int SVI::getLEP()const {return lep;}
 
-    int getPOC()const {return poc;}
+    int SVI::getPOC()const {return poc;}
 
-    double getMed_ill()const {return med_ill;}
+    double SVI::getMed_ill()const {return med_ill;}
     
-    void readDataFromFile(vector<SVI>& data){
-        ifstream inFile;
+    void SVI::readDataFromFile(std::vector<SVI>& data){
+        std::ifstream inFile;
         inFile.open("/Users/jboothhowe/Documents/CS2300/Final-Project/BostonSVI.csv");
-        string header;
+        std::string header;
+
+        // Check if the file failed to open
+        if (!inFile.is_open()) {
+            std::cout << "Error: Unable to open file." << std::endl;
+        }
+
         
         if(inFile){
             inFile >> header;
@@ -113,18 +118,5 @@ public:
         inFile.close();
         
     }
-    
-private:
-    int ID;
-    int pop;
-    int house;
-    int totDis;
-    int totChild;
-    int olderAdult;
-    int low_to_no;
-    int lep;
-    int poc;
-    double med_ill;
-    
-}
+
 

@@ -1,3 +1,5 @@
+#ifndef SVI_H
+#define SVI_H
 #include "DataAnalysis.h"
 
 class SVI : public DataAnalysis {
@@ -37,7 +39,7 @@ public:
     
     double getMed_ill()const;
     
-    void readDataFromFile(vector<SVI>& data) override;
+    void readDataFromFile(std::vector<SVI>& data);
     
 private:
     int ID;
@@ -51,5 +53,6 @@ private:
     int poc;
     double med_ill;
     
-}
+};
 
+#endif

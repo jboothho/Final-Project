@@ -1,4 +1,6 @@
 #include "DataAnalysis.h"
+#ifndef URBANHEAT_H
+#define URBANHEAT_H
 
 class UrbanHeat : public DataAnalysis {
 public:
@@ -21,31 +23,31 @@ public:
      * Modifies:
      * Effects:
      */
-    int getID();
+    int getID() const;
     /**
      * Requires:
      * Modifies:
      * Effects:
      */
-    double getLST();
+    double getLST() const;
     /**
      * Requires:
      * Modifies:
      * Effects:
      */
-    double getCanopy();
+    double getCanopy() const;
     /**
      * Requires:
      * Modifies:
      * Effects:
      */
-    double getAlbedo();
+    double getAlbedo() const;
     /**
      * Requires:
      * Modifies:
      * Effects:
      */
-    double getISA();
+    double getISA() const;
 
         // Setters
     /**
@@ -79,14 +81,14 @@ public:
      */
     void setISA(double newISA);
     
-    void readDataFromFile(vector<UrbanHeat>) override;
+    void readDataFromFile(std::vector<UrbanHeat>& data);
 
     private:
         int ID;
         double lst;
-        double canopy;
-        double albedo;
+        double can;
+        double alb;
         double isa;
-    
-    
-}
+
+};
+#endif

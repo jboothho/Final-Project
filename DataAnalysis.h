@@ -6,6 +6,8 @@
 #include <string>
 #include <vector>
 using std::ifstream, std::string, std::vector, std::cout, std::endl;
+#include "SVI.h"
+#include "UrbanHeat.h"
 
 
 /* DataAnalysis super class that will have the capacity to perform three different statistical analyses on its subclasses datasets*/

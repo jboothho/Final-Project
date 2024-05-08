@@ -44,9 +44,15 @@ public:
     
     long double getMed_ill()const;
 
+    bool operator<(const SVI &s) const;
+    bool operator>(const SVI &s) const;
+    bool operator<=(const SVI &s) const;
+    bool operator>=(const SVI &s) const;
+    bool operator==(const SVI &s) const;
+
     static void readDataFromFile(vector<SVI>& data);
     
-private:
+protected:
     long ID;
     long pop;
     long house;

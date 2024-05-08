@@ -19,6 +19,43 @@ void UrbanHeat::setCanopy(double newCanopy) { can = newCanopy; }
 void UrbanHeat::setAlbedo(double newAlbedo) { alb = newAlbedo; }
 void UrbanHeat::setISA(double newISA) { isa = newISA; }
 
+// overload < operator
+bool UrbanHeat::operator<(const UrbanHeat &s) const {
+    return this->ID < s.ID;
+}
+
+//overload > operator
+bool UrbanHeat::operator>(const UrbanHeat &s) const {
+    if (this->ID > s.ID) {
+        return true;
+    }
+    return false;
+}
+
+//overload <= operator
+bool UrbanHeat::operator<=(const UrbanHeat &s) const {
+    if (this->ID <= s.ID) {
+        return true;
+    }
+    return false;
+}
+
+//overload >= operator
+bool UrbanHeat::operator>=(const UrbanHeat &s) const {
+    if (this->ID >= s.ID) {
+        return true;
+    }
+    return false;
+}
+
+//overload == operator
+bool UrbanHeat::operator==(const UrbanHeat &s) const {
+    if (this->ID == s.ID) {
+        return true;
+    }
+    return false;
+
+
 void UrbanHeat::readDataFromFile(vector<UrbanHeat> &data){
     std::ifstream inFile;
     UrbanHeat obj;

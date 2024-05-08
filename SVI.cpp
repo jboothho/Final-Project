@@ -3,7 +3,8 @@
  SVI::SVI() : ID(0), pop(0), house(0), totDis(0), totChild(0), olderAdult(0), low_to_no(0), lep(0), poc(0), med_ill(0) {}
 
  SVI::SVI(long  ID, long  pop, long  house, long  totDis, long  totChild, long  olderAdult, long  low_to_no, long  lep, long  poc, long double med_ill): ID(ID), pop(pop), house(house), totDis(totDis), totChild(totChild), olderAdult(olderAdult), low_to_no(low_to_no), lep(lep), poc(poc), med_ill(med_ill){}
-        
+
+
  // Getters
  long  SVI::getID()const {return ID;}
 
@@ -24,6 +25,44 @@
  long  SVI::getPOC()const {return poc;}
 
  long double SVI::getMed_ill()const {return med_ill;}
+
+// overload < operator
+bool SVI::operator<(const SVI &s) const {
+    return this->ID < s.ID;
+}
+
+//overload > operator
+bool SVI::operator>(const SVI &s) const {
+    if (this->ID > s.ID) {
+        return true;
+    }
+    return false;
+}
+
+//overload <= operator
+bool SVI::operator<=(const SVI &s) const {
+    if (this->ID <= s.ID) {
+        return true;
+    }
+    return false;
+}
+
+//overload >= operator
+bool SVI::operator>=(const SVI &s) const {
+    if (this->ID >= s.ID) {
+        return true;
+    }
+    return false;
+}
+
+//overload == operator
+bool SVI::operator==(const SVI &s) const {
+    if (this->ID == s.ID) {
+        return true;
+    }
+    return false;
+
+}
     
  void SVI::readDataFromFile(vector<SVI> &data){
     ifstream inFile;

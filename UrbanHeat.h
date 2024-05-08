@@ -85,6 +85,12 @@ public:
      * Effects:
      */
     void setISA(double newISA);
+
+    bool operator<(const UrbanHeat &s) const;
+    bool operator>(const UrbanHeat &s) const;
+    bool operator<=(const UrbanHeat &s) const;
+    bool operator>=(const UrbanHeat &s) const;
+    bool operator==(const UrbanHeat &s) const;
     
     static void readDataFromFile(std::vector<UrbanHeat>& data);
 

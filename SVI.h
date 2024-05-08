@@ -1,8 +1,13 @@
 #ifndef SVI_H
 #define SVI_H
-#include "DataAnalysis.h"
+#include <fstream>
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <vector>
+using std::ifstream, std::string, std::vector, std::cout, std::endl;
 
-class SVI : public DataAnalysis {
+class SVI {
 public:
     /**
      * Requires:
@@ -15,43 +20,43 @@ public:
      * Modifies:
      * Effects:
      */
-    SVI(int ID, int pop, int house, int totDis, int totChild, int olderAdult, int low_to_no, int lep, int poc, double med_ill);
+    SVI(long ID, long pop, long house, long totDis, long totChild, long olderAdult, long low_to_no, long lep, long poc, long double med_ill);
     
     // Getters
     
-    int getID()const;
+    long getID()const;
     
-    int getPop()const;
+    long getPop()const;
     
-    int getHouse()const;
+    long getHouse()const;
     
-    int getTotDis()const;
+    long getTotDis()const;
     
-    int getTotChild()const;
+    long getTotChild()const;
     
-    int getOlderAdult()const;
+    long getOlderAdult()const;
     
-    int getLow_to_no()const;
+    long getLow_to_no()const;
     
-    int getLEP()const;
+    long getLEP()const;
     
-    int getPOC()const;
+    long getPOC()const;
     
-    double getMed_ill()const;
-    
-    void readDataFromFile(std::vector<SVI>& data);
+    long double getMed_ill()const;
+
+    static void readDataFromFile(vector<SVI>& data);
     
 private:
-    int ID;
-    int pop;
-    int house;
-    int totDis;
-    int totChild;
-    int olderAdult;
-    int low_to_no;
-    int lep;
-    int poc;
-    double med_ill;
+    long ID;
+    long pop;
+    long house;
+    long totDis;
+    long totChild;
+    long olderAdult;
+    long low_to_no;
+    long lep;
+    long poc;
+    long double med_ill;
     
 };
 

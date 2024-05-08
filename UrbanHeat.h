@@ -1,8 +1,13 @@
-#include "DataAnalysis.h"
 #ifndef URBANHEAT_H
 #define URBANHEAT_H
+#include <fstream>
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <vector>
+using std::ifstream, std::string, std::vector, std::cout, std::endl;
 
-class UrbanHeat : public DataAnalysis {
+class UrbanHeat {
 public:
     /**
      * Requires:
@@ -15,7 +20,7 @@ public:
      * Modifies:
      * Effects:
      */
-    UrbanHeat(int ID, double lst, double can, double alb, double isa);
+    UrbanHeat(long ID, double lst, double can, double alb, double isa);
     
     // Getters
     /**
@@ -23,7 +28,7 @@ public:
      * Modifies:
      * Effects:
      */
-    int getID() const;
+    long getID() const;
     /**
      * Requires:
      * Modifies:
@@ -55,7 +60,7 @@ public:
      * Modifies:
      * Effects:
      */
-    void setID(int newID);
+    void setID(long newID);
     /**
      * Requires:
      * Modifies:
@@ -81,10 +86,10 @@ public:
      */
     void setISA(double newISA);
     
-    void readDataFromFile(std::vector<UrbanHeat>& data);
+    static void readDataFromFile(std::vector<UrbanHeat>& data);
 
     private:
-        int ID;
+        long ID;
         double lst;
         double can;
         double alb;

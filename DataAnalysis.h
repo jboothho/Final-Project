@@ -1,10 +1,12 @@
-#include <iostream>
+#ifndef DATA_ANALYSIS_H
+#define DATA_ANALYSIS_H
 #include <fstream>
-#include <vector>
+#include <iostream>
 #include <iomanip>
 #include <string>
-#ifndef DATAANALYSIS_H
-#define DATAANALYSIS_H
+#include <vector>
+using std::ifstream, std::string, std::vector, std::cout, std::endl;
+
 
 /* DataAnalysis super class that will have the capacity to perform three different statistical analyses on its subclasses datasets*/
 class DataAnalysis {

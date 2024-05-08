@@ -5,10 +5,8 @@
 using namespace std;
 
 int main(){
-    SVI svi;
-    UrbanHeat urbanHeat;
-    std::vector<SVI> svi_vec;
-    std::vector<UrbanHeat> urbanHeat_vec;
-    svi.readDataFromFile(svi_vec);
-    urbanHeat.readDataFromFile(urbanHeat_vec);
+    vector<SVI> svi_vec;
+    vector<UrbanHeat> urban_vec;
+    UrbanHeat::readDataFromFile(urban_vec);
+    SVI::readDataFromFile(svi_vec);
 }

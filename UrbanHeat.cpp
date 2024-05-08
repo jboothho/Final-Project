@@ -2,51 +2,58 @@
 
 UrbanHeat::UrbanHeat() : ID(0), lst(0), can(0), alb(0), isa(0) {}
 
-UrbanHeat::UrbanHeat(int ID, double lst, double can, double alb, double isa)
+UrbanHeat::UrbanHeat(long ID, double lst, double can, double alb, double isa)
         : ID(ID), lst(lst), can(can), alb(alb), isa(isa) {}
 
 // Getters
-int UrbanHeat::getID() const { return ID; }
+long UrbanHeat::getID() const { return ID; }
 double UrbanHeat::getLST() const { return lst; }
 double UrbanHeat::getCanopy() const { return can; }
 double UrbanHeat::getAlbedo() const { return alb; }
 double UrbanHeat::getISA() const { return isa; }
 
 // Setters
-void UrbanHeat::setID(int newID) { ID = newID; }
+void UrbanHeat::setID(long newID) { ID = newID; }
 void UrbanHeat::setLST(double newLST) { lst = newLST; }
 void UrbanHeat::setCanopy(double newCanopy) { can = newCanopy; }
 void UrbanHeat::setAlbedo(double newAlbedo) { alb = newAlbedo; }
 void UrbanHeat::setISA(double newISA) { isa = newISA; }
 
-void UrbanHeat::readDataFromFile(std::vector<UrbanHeat> &data){
+void UrbanHeat::readDataFromFile(vector<UrbanHeat> &data){
     std::ifstream inFile;
+    UrbanHeat obj;
     inFile.open("/Users/jboothhowe/Documents/CS2300/Final-Project/UrbanLCH.csv");
+
+    // Check if the file failed to open
+    if (!inFile.is_open()) {
+        cout << "Error: Unable to open file." << endl;
+    }
     std::string header;
     if (inFile){
         inFile >> header;
     }
-    int ID = 0;
-    double lst = 0;
-    double canopy = 0;
-    double albedo = 0;
-    double isa = 0;
+    long new_ID = 0;
+    long double new_lst = 1;
+    long double new_canopy = 2;
+    long double new_albedo = 3;
+    long double new_isa = 4;
     char comma = ',';
     while (inFile && inFile.peek() != EOF){
         // get ID
-        inFile >> ID >> comma;
+        inFile >> new_ID >> comma;
         // get Land Surface Temperature
-        inFile >> lst >> comma;
+        inFile >> new_lst >> comma;
         // get Tree Canopy fraction
-        inFile >> canopy >> comma;
+        inFile >> new_canopy >> comma;
         // get Albedo
-        inFile >> albedo >> comma;
+        inFile >> new_albedo >> comma;
         // get Impervious surface fraction
-        inFile >> isa >> comma;
+        inFile >>new_isa;
 
+        obj = UrbanHeat(new_ID, new_lst, new_canopy, new_albedo, new_isa);
         // Putting data from this line of file into
         // an UrbanHeat object and adding object to the vector
-        data.push_back(UrbanHeat(ID, lst, canopy, albedo, isa));
+        data.emplace_back(obj);
     }
     inFile.close();
 }

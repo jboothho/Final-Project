@@ -85,6 +85,7 @@ public:
      * Effects:
      */
     void setISA(double newISA);
+    friend std::ostream& operator<<(std::ostream& outs, const UrbanHeat& u);
 
     bool operator<(const UrbanHeat &s) const;
     bool operator>(const UrbanHeat &s) const;

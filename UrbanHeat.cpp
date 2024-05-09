@@ -54,7 +54,7 @@ bool UrbanHeat::operator==(const UrbanHeat &s) const {
         return true;
     }
     return false;
-
+}
 
 void UrbanHeat::readDataFromFile(vector<UrbanHeat> &data){
     std::ifstream inFile;

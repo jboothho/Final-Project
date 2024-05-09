@@ -44,6 +44,8 @@ public:
     
     long double getMed_ill()const;
 
+    friend std::ostream& operator<<(std::ostream& outs, const SVI& svi);
+
     bool operator<(const SVI &s) const;
     bool operator>(const SVI &s) const;
     bool operator<=(const SVI &s) const;

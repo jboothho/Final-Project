@@ -26,6 +26,11 @@
 
  long double SVI::getMed_ill()const {return med_ill;}
 
+
+ std::ostream &operator<<(std::ostream &outs, SVI svi) {
+    outs << svi.getID() << svi.getPop() << svi.getHouse() << svi.getTotDis() << svi.getTotChild() << svi.getOlderAdult() << svi.getLow_to_no() << svi.getLEP() << svi.getPOC() << svi.getMed_ill() << endl;
+    return outs;
+}
 // overload < operator
 bool SVI::operator<(const SVI &s) const {
     return this->ID < s.ID;

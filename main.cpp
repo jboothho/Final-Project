@@ -13,17 +13,21 @@ int UrbanHeat_variable();
 int main(){
     vector<SVI> svi_vec;
     vector<UrbanHeat> urban_vec;
-    vector<SVI> svi_sorted;
-    vector<UrbanHeat> urban_sorted;
+
     int SVI_choice;
     int UrbanHeat_choice;
     UrbanHeat::readDataFromFile(urban_vec);
     SVI::readDataFromFile(svi_vec);
-    intro();
-    SVI_choice = SVI_variable();
-    UrbanHeat_choice = UrbanHeat_variable();
-    urban_sorted = mergeSort(urban_vec);
-    svi_sorted = mergeSort(svi_sorted);
+    //intro();
+    //SVI_choice = SVI_variable();
+    //UrbanHeat_choice = UrbanHeat_variable();
+
+    // Sort both by ID
+    urban_vec = mergeSort(urban_vec);
+    svi_vec = mergeSort(svi_vec);
+
+
+
     return 0;
 }
 

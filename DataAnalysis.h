@@ -24,22 +24,21 @@ public:
      Effects: */
     virtual ~DataAnalysis() = default;
 
+    static void intro();
+    static int SVI_variable();
+    static int UrbanHeat_variable();
 
-    /* PerformAnalysis1 function that will perform the first analysis on the data
-     and load all of the outcomes into a vector*/
-        /* I'm thinking that one of them could perform a basic analysis and get the mean of each area*/
-    void PerformAnalysis1(std::vector<DataAnalysis> & data);
-    
-    /* PerformAnalysis2 function that will perform the second analysis on the data*/
-        /* This one could do a linear regression*/
-    void PerformAnalysis2(std::vector<DataAnalysis> & data);
+    // Function to remove elements from vec2 that do not have the specified common ID
+// Function to filter svi_vec based on unique IDs present in urban_vec
+    static void filterUrbanHeat(std::vector<SVI>& svi_vec, const std::vector<UrbanHeat>& urban_vec);
 
-    /* PerformAnalysis3 function that will perform the third analysis on the data*/
-        /* And this one could do a correlation assessment between two variables*/
-    void PerformAnalysis3(std::vector<DataAnalysis> & data);
+// Function to filter urban_vec based on unique IDs present in svi_vec
+    static void filterSVI(std::vector<UrbanHeat>& urban_vec, const std::vector<SVI>& svi_vec);
 
-    /* SendData function that will send the data to Python to add to maps*/
-    void sendData();
+
+    static void dataToCSV(vector<UrbanHeat>& urban_vec, vector<SVI>& svi_vec, int urban_choice, int svi_choice);
+
+
 
 };
 

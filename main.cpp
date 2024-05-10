@@ -3,6 +3,7 @@
 #include "MergeSort.h"
 #include "DataAnalysis.h"
 #include <vector>
+#include <cstdlib>
 #include <iostream>
 using namespace std;
 
@@ -29,6 +30,7 @@ int main(){
     UrbanHeat_choice = DataAnalysis::UrbanHeat_variable();
 
     DataAnalysis::dataToCSV(urban_vec, svi_vec, UrbanHeat_choice, SVI_choice);
+    system("jupyter notebook");
 
     return 0;
 }

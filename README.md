@@ -23,7 +23,3 @@ ESRI for most of the jupyter notebook code:
 <https://developers.arcgis.com/documentation/mapping-apis-and-services/spatial-analysis/feature-analysis/combine-data/join-features/>
 
 
-## Grade based on the Rubric:
-
-While I veered from the grading rubric a little bit, I believe that I deserve close to full credit on this assignment. The C++ part is fully functioning and I was able to manipulate the data to create a new csv file with shared characteristics from each to send to the jupyter notebook. I also put a whole lot of hours into trying to learn the arcGIS API for Python and am just a step away from having this in full functionality. 
-
